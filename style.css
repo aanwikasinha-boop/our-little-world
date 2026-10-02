@@ -1,0 +1,527 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f6, #eaf6ff);
+    color: #332733;
+    text-align: center;
+}
+
+#app {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+section {
+    min-height: 90vh;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 15px;
+    background: #ff9fbd;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+.hidden {
+    display: none;
+}
+
+.page {
+    padding-top: 30px;
+}
+
+#verificationMessage,
+#dateResult,
+#moodResult {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background: white;
+}
+.future-card {
+    background: white;
+    padding: 18px;
+    margin: 12px 0;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.future-card:hover {
+    transform: scale(1.03);
+}
+
+#futureResult {
+    background: #fff;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 18px;
+}
+.dashboard {
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    opacity: 0.7;
+}
+
+.status-card {
+    background: white;
+    padding: 18px;
+    margin: 12px 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.status-card h3 {
+    margin-bottom: 8px;
+}
+
+.status-card p {
+    margin: 0;
+    font-size: 17px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.stat-card {
+    background: white;
+    padding: 18px 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.stat-card b {
+    font-size: 25px;
+}
+
+.stat-card span {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.stat-card strong {
+    font-size: 17px;
+}
+.memory-upload {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.memory-upload input {
+    width: 90%;
+    padding: 12px;
+    margin: 8px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.memory-card {
+    background: white;
+    padding: 15px;
+    margin: 18px 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.memory-card img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.memory-card p {
+    font-size: 16px;
+    margin: 12px 5px;
+}
+.song-card {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    margin: 25px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.album-heart {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.song-card audio {
+    width: 100%;
+    margin-top: 15px;
+}
+.pet-area {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+#shiro {
+    position: relative;
+    width: 220px;
+    height: 230px;
+    margin: 20px auto;
+}
+
+.dog-face {
+    position: absolute;
+    width: 150px;
+    height: 125px;
+    background: white;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    top: 30px;
+    left: 35px;
+    z-index: 2;
+}
+
+.dog-ear {
+    position: absolute;
+    width: 55px;
+    height: 100px;
+    background: white;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    top: 35px;
+    z-index: 1;
+}
+
+.left-ear {
+    left: 15px;
+    transform: rotate(25deg);
+}
+
+.right-ear {
+    right: 15px;
+    transform: rotate(-25deg);
+}
+
+.eye {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #222;
+    border-radius: 50%;
+    top: 45px;
+}
+
+.left-eye {
+    left: 42px;
+}
+
+.right-eye {
+    right: 42px;
+}
+
+.nose {
+    position: absolute;
+    width: 18px;
+    height: 13px;
+    background: #222;
+    border-radius: 50%;
+    top: 65px;
+    left: 66px;
+}
+
+.mouth {
+    position: absolute;
+    top: 77px;
+    left: 67px;
+    font-size: 20px;
+}
+
+.dog-body {
+    position: absolute;
+    width: 115px;
+    height: 80px;
+    background: white;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    bottom: 5px;
+    left: 52px;
+}
+
+.collar {
+    position: absolute;
+    width: 105px;
+    height: 12px;
+    background: #ff6f91;
+    border-radius: 10px;
+    bottom: 63px;
+    left: 58px;
+    z-index: 3;
+}
+
+.happiness-bar {
+    width: 100%;
+    height: 18px;
+    background: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+#happinessFill {
+    width: 100%;
+    height: 100%;
+    background: #ff8fb1;
+    transition: width 0.3s;
+}
+
+.pet-buttons button {
+    margin: 8px 0;
+}
+
+#shiroMessage {
+    background: #fff0f6;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+/* SHIRO ANIMATIONS */
+
+@keyframes happyBounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-25px); }
+    60% { transform: translateY(0); }
+    80% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes petBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@keyframes sleepy {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+}
+
+.shiro-playing {
+    animation: happyBounce 0.8s ease;
+}
+
+.shiro-petted {
+    animation: petBounce 0.5s ease;
+}
+
+.shiro-sleeping {
+    animation: sleepy 1.5s ease-in-out infinite;
+}
+
+.heart {
+    position: absolute;
+    font-size: 25px;
+    animation: heartFloat 1.2s ease-out forwards;
+    pointer-events: none;
+}
+/* Shiro sleeping eyes */
+
+.shiro-sleeping .eye {
+    height: 3px;
+    width: 18px;
+    border-radius: 50%;
+    top: 50px;
+}
+
+.shiro-sleeping .left-eye {
+    left: 39px;
+}
+
+.shiro-sleeping .right-eye {
+    right: 39px;
+}
+/* Shiro eating animation */
+
+.food-bowl {
+    position: absolute;
+    left: 82px;
+    bottom: 5px;
+    font-size: 35px;
+    animation: foodAppear 0.3s ease;
+    z-index: 10;
+}
+
+.shiro-eating {
+    animation: eating 0.4s ease-in-out infinite;
+}
+
+@keyframes eating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes foodAppear {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+#sixMonthCalendar {
+    margin-top: 20px;
+}
+
+.six-month-event {
+    background: white;
+    padding: 16px;
+    margin: 10px 0;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.six-month-event span {
+    font-size: 25px;
+}
+
+.six-month-event small {
+    display: block;
+    opacity: 0.6;
+}
+
+.six-month-event.past {
+    border: 2px solid #ff6f91;
+}
+.distance-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 28px;
+    margin: 25px 0;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.location-icon {
+    font-size: 45px;
+}
+
+.location h3 {
+    margin: 8px 0;
+}
+
+.location p {
+    margin: 5px 0;
+}
+
+.location small {
+    opacity: 0.6;
+}
+
+.distance-number {
+    margin: 25px 0;
+}
+
+.distance-number strong {
+    display: block;
+    font-size: 38px;
+}
+
+.distance-number span {
+    opacity: 0.6;
+}
+
+.distance-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.distance-line div {
+    height: 2px;
+    flex: 1;
+    background: #ff9ab5;
+}
+
+.distance-message {
+    font-style: italic;
+    margin: 20px;
+}
+.distance-card {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    margin: 25px auto;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.distance-card h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.distance-number {
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background: #fff0f5;
+}
+
+.distance-number strong {
+    font-size: 36px;
+    display: inline-block;
+    margin: 8px 0;
+}
+
+.distance-card p {
+    opacity: 0.7;
+}

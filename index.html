@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Private • Aaru's App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <section id="verification">
+        <p>PRIVATE • AARU'S APP</p>
+
+        <h1>Whose boyfriend are you? 👀</h1>
+
+        <button onclick="wrongBoyfriend()">Someone else</button>
+        <button onclick="wrongBoyfriend()">Nobody 😭</button>
+        <button onclick="verifyBoyfriend()">Aaru ♡</button>
+
+        <p id="verificationMessage"></p>
+    </section>
+
+
+    <section id="home" class="hidden">
+      <h2>🎮 Boyfriend Mission</h2>
+
+<p id="missionText">Make Aaru smile today. 💌</p>
+
+<button onclick="completeMission()">COMPLETE MISSION ♡</button>
+
+<p id="missionStatus"></p>
+
+<p id="lovePoints">LOVE POINTS: 0 ♡</p>
+        <div class="dashboard">
+
+    <h1>AARU ♡ CUTU JALKUKRA</h1>
+
+    <p class="subtitle">Long Distance Mode: ON 🌎</p>
+
+    <div class="status-card">
+        <h3>🩷 Current Status</h3>
+        <p>Missing each other</p>
+    </div>
+
+    <div class="status-card">
+        <h3>♾️ Relationship Level</h3>
+        <p>∞</p>
+    </div>
+
+    <div class="status-card">
+        <h3>💌 Boyfriend Status</h3>
+        <p>Taken. Very taken.</p>
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <b>📅</b>
+            <span>Days Together</span>
+            <strong>5months 25days</strong>
+        </div>
+
+        <div class="stat-card">
+            <b>📞</b>
+            <span>Calls</span>
+            <strong>2+hrs</strong>
+        </div>
+
+        <div class="stat-card">
+            <b>📸</b>
+            <span>Memories</span>
+            <strong>0</strong>
+        </div>
+
+        <div class="stat-card">
+            <b>🌎</b>
+            <span>Distance</span>
+            <strong>_700_ km+</strong>
+        </div>
+
+    </div>
+
+</div>
+        <button onclick="showPage('mood')">💗 Mood</button>
+        <button onclick="showPage('dates')">🎲 Dates</button>
+        <button onclick="showPage('future')">🔮 Future</button>
+        <button onclick="showPage('rules')">📜 Rules</button>
+        <button onclick="showPage('level')">🏆 Level</button>
+        <button onclick="showPage('memories')">📸 Our Memories</button>
+        <button onclick="needAaru()">💗 NEED AARU? ♡</button>
+        <button onclick="showPage('soundtrack')">🎧 Our Song</button>
+        <button onclick="showPage('quiz'); startQuiz()">
+         🧠 How Well Do You Know Aaru?
+        </button>
+        <button onclick="showPage('pet')">🐶 Shiro</button>
+        <button onclick="showPage('unspoken')">
+    📝 Unspoken Words
+</button>
+      <button onclick="showPage('timeline')">📅 Our Timeline</button>
+      <button onclick="showPage('distance')">📍 Our Distance</button>
+
+<p id="aaruResponse"></p>
+    <h2>🥺 How badly do you miss Aaru?</h2>
+
+<input
+    type="range"
+    id="missSlider"
+    min="1"
+    max="4"
+    value="1"
+    oninput="updateMissing(this.value)"
+>
+
+<p id="missResult">🙂 Just a little</p>
+
+    </section>
+
+
+    <section id="mood" class="page hidden">
+        <h2>💗 Mood Check</h2>
+        <button onclick="mood('happy')">😊 Happy</button>
+        <button onclick="mood('sad')">🥺 Sad</button>
+
+        <p id="moodResult"></p>
+
+        <button onclick="showPage('home')">← Back</button>
+    </section>
+
+
+    <section id="dates" class="page hidden">
+        <h2>🎲 Plan Our Date</h2>
+
+        <button onclick="generateDate()">PLAN OUR DATE ♡</button>
+
+        <p id="dateResult"></p>
+
+        <button onclick="showPage('home')">← Back</button>
+    </section>
+
+
+    <section id="future" class="page hidden">
+        <h2>🔮 Future Us</h2>
+
+<p>Things we're going to do someday... ♡</p>
+
+<div class="future-card" onclick="futureThing(0)">
+    ✈️ <b>Our first big trip</b>
+</div>
+
+<div class="future-card" onclick="futureThing(1)">
+    🏡 <b>Our first home</b>
+</div>
+
+<div class="future-card" onclick="futureThing(2)">
+    🐶 <b>Get our first pet</b>
+</div>
+
+<div class="future-card" onclick="futureThing(3)">
+    💍 <b>Get married</b>
+</div>
+
+<div class="future-card" onclick="futureThing(4)">
+    👶 <b>Have kids someday</b>
+</div>
+
+<div class="future-card" onclick="futureThing(5)">
+    🌅 <b>Watch a sunrise together</b>
+</div>
+
+<div class="future-card" onclick="futureThing(6)">
+    🎄 <b>Spend our first Christmas together</b>
+</div>
+
+<div class="future-card" onclick="futureThing(7)">
+    📸 <b>Take our first proper couple photos</b>
+</div>
+
+<div class="future-card" onclick="futureThing(8)">
+    💰 <b>Build our dream life</b>
+</div>
+
+<div class="future-card" onclick="futureThing(9)">
+    👨‍👩‍👧‍👦 <b>Build our little family</b>
+</div>
+
+<p id="futureResult"></p>
+
+<button onclick="showPage('home')">← Back</button>
+    </section>
+
+
+    <section id="rules" class="page hidden">
+        <h2>📜 Aaru's Rules</h2>
+
+        <p>RULE #01 — Never let Aaru sleep angry.</p>
+        <p>RULE #02 — Aaru is always right.</p>
+
+        <button onclick="showPage('home')">← Back</button>
+    </section>
+
+
+    <section id="level" class="page hidden">
+<h2>🏆 Boyfriend Level</h2>
+
+<h1 id="boyfriendLevel">Level 1</h1>
+
+<p id="levelTitle">Boyfriend Candidate</p>
+
+<p id="levelPoints">Love Points: 0 ♡</p>
+
+<button onclick="updateLevel()">CHECK MY LEVEL</button>
+
+<button onclick="showPage('home')">← Back</button>
+    </section>
+<section id="memories" class="page hidden">
+
+    <h2>📸 Our Memories</h2>
+
+    <p>Little pieces of us, saved here. ♡</p>
+
+    <div class="memory-upload">
+
+        <input
+            type="file"
+            id="memoryPhoto"
+            accept="image/*"
+        >
+
+        <input
+            type="text"
+            id="memoryCaption"
+            placeholder="Write a caption..."
+        >
+
+        <button onclick="addMemory()">
+            SAVE THIS MEMORY ♡
+        </button>
+
+    </div>
+
+    <div id="memoryGallery"></div>
+
+    <button onclick="showPage('home')">← Back</button>
+
+</section>
+<section id="soundtrack" class="page hidden">
+
+    <h2>🎧 Our Song</h2>
+
+    <p>This one reminds me of us in 2021 veryyyyyy nostalgic. ♡</p>
+
+    <div class="song-card">
+
+        <div class="album-heart">💗</div>
+
+        <h3>Our Song</h3>
+
+        <p>Aaru ♡ Cutu Jalkukra</p>
+
+        <audio id="ourSong" controls>
+            <source src="our-song.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+    </div>
+
+    <button onclick="showPage('home')">← Back</button>
+
+</section>
+<section id="quiz" class="page hidden">
+
+    <h2>🧠 How Well Do You Know Aaru?</h2>
+
+    <p id="quizQuestion"></p>
+
+    <div id="quizOptions"></div>
+
+    <p id="quizResult"></p>
+
+    <button onclick="showPage('home')">← Back</button>
+
+</section>
+<section id="pet" class="page hidden">
+
+    <h2>🐶 Shiro</h2>
+
+    <p>Aaru's little baby ♡</p>
+
+    <div class="pet-area">
+
+        <div id="shiro">
+            <div class="dog-ear left-ear"></div>
+            <div class="dog-ear right-ear"></div>
+
+            <div class="dog-face">
+                <div class="eye left-eye"></div>
+                <div class="eye right-eye"></div>
+
+                <div class="nose"></div>
+
+                <div class="mouth">ᴗ</div>
+            </div>
+
+            <div class="dog-body"></div>
+
+            <div class="collar"></div>
+
+        </div>
+
+        <h2 id="shiroMood">🥰 Shiro is happy!</h2>
+
+        <div class="happiness-bar">
+            <div id="happinessFill"></div>
+        </div>
+
+        <p id="happinessText">Happiness: 100%</p>
+
+    </div>
+
+    <div class="pet-buttons">
+
+        <button onclick="feedShiro()">
+            🍖 Feed Shiro
+        </button>
+
+        <button onclick="playShiro()">
+            🎾 Play with Shiro
+        </button>
+
+        <button onclick="petShiro()">
+            🫂 Pet Shiro
+        </button>
+
+        <button onclick="sleepShiro()">
+            💤 Let Shiro Sleep
+        </button>
+
+    </div>
+
+    <p id="shiroMessage"></p>
+
+    <button onclick="showPage('home')">
+        ← Back
+    </button>
+
+</section>
+<section id="unspoken" class="page hidden">
+
+    <h2>📝 Unspoken Words</h2>
+
+    <p>
+        You don't have to talk yet.
+        Just write what you're feeling. ♡
+    </p>
+
+    <div class="side-buttons">
+
+        <button onclick="openWritingPad('aaru')">
+            💗 Aaru's Side
+        </button>
+
+        <button onclick="openWritingPad('cutu')">
+            💙 Cutu's Side
+        </button>
+
+    </div>
+
+    <div id="writingArea" style="display:none;">
+
+        <h3 id="writingTitle"></h3>
+
+        <textarea
+            id="feelingsText"
+            placeholder="Write whatever you're feeling..."
+            rows="12">
+        </textarea>
+
+        <br>
+
+        <button onclick="saveFeelings()">
+            💾 Save
+        </button>
+
+        <button onclick="clearFeelings()">
+            🧹 Clear
+        </button>
+
+    </div>
+
+    <p id="feelingsStatus"></p>
+
+    <button onclick="showPage('home')">
+        ← Back
+    </button>
+
+</section>
+<section id="timeline" class="page hidden">
+
+    <h2>📅 Our Timeline</h2>
+
+    <p>Every chapter of us. ♡</p>
+
+    <div id="timelineList">
+
+        <div class="timeline-event">
+            <div class="timeline-date">2018</div>
+            <div class="timeline-content">
+                <h3>🌸 We Met</h3>
+                <p>The beginning of our story.</p>
+            </div>
+        </div>
+
+        <div class="timeline-event">
+            <div class="timeline-date">2021</div>
+            <div class="timeline-content">
+                <h3>💗 We Started Having Crushes</h3>
+                <p>Something started changing between us...</p>
+            </div>
+        </div>
+
+        <div class="timeline-event">
+            <div class="timeline-date">18 January 2022</div>
+            <div class="timeline-content">
+                <h3>💍 The First Proposal</h3>
+                <p>And suddenly, everything became real.</p>
+            </div>
+        </div>
+
+        <div class="timeline-event">
+            <div class="timeline-date">6 March 2022</div>
+            <div class="timeline-content">
+                <h3>💔 We Broke Up</h3>
+                <p>One chapter ended.</p>
+            </div>
+        </div>
+
+        <div class="timeline-event">
+            <div class="timeline-date">7 April 2026</div>
+            <div class="timeline-content">
+                <h3>💗 The Second Proposal</h3>
+                <p>Our story found its way back.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button onclick="showAddTimeline()">
+        ➕ Add Timeline Event
+    </button>
+
+    <div id="addTimelineBox" style="display:none;">
+
+        <h3>➕ Add Your Own Event</h3>
+
+        <input
+            type="text"
+            id="timelineDate"
+            placeholder="Date e.g. 15 August 2026"
+        >
+
+        <input
+            type="text"
+            id="timelineTitle"
+            placeholder="What happened?"
+        >
+
+        <textarea
+            id="timelineDescription"
+            placeholder="Write something about this memory..."
+            rows="4">
+        </textarea>
+
+        <button onclick="saveTimelineEvent()">
+            💾 Save Event
+        </button>
+
+    </div>
+
+    <h2>🗓️ Our 6-Month Calendar</h2>
+
+    <p>Every 6 months together gets a ❤️</p>
+
+    <div id="sixMonthCalendar"></div>
+
+    <button onclick="showPage('home')">
+        ← Back
+    </button>
+
+</section>
+<section id="distance" class="page hidden">
+
+    <h2>📍 Our Distance</h2>
+
+    <p>Different places. Same us. ♡</p>
+
+    <div class="distance-card">
+
+        <h3>🏫 Aaru</h3>
+        <p>NMAMIT, Nitte, Karnataka</p>
+
+        <div class="distance-number">
+            💗 ↔️ 💗
+            <br>
+            <strong>700+ km</strong>
+            <br>
+            apart
+        </div>
+
+        <h3>🏠 Cutu</h3>
+        <p>Shivam Society, Pimple Saudagar, Pune</p>
+
+    </div>
+
+   <p>
+    "Different cities, same us." ♡
+</p>
+
+<button onclick="openOurMap()">
+    🗺️ View Our Map
+</button>
+
+<p id="mapMessage"></p>
+
+<button onclick="showPage('home')">
+    ← Back
+</button>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
